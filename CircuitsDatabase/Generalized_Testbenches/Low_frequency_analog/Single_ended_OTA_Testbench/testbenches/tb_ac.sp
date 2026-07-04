@@ -1,5 +1,5 @@
 *******************************************************
-* tb_ac_final.sp -- Cleaned AC Testbench
+* tb_ac.sp -- AC Testbench
 *******************************************************
 .option post=2 
 .option nomod

@@ -1,5 +1,5 @@
 *******************************************************
-* tb_ocmr_final.sp - Topology Agnostic Output Range
+* tb_ocmr.sp - OCMR testbench
 *******************************************************
 .option post=2 nomod accurate=1
 .temp 27

@@ -1,5 +1,5 @@
 *******************************************************
-* tb_icmr_fixed.sp -- Corrected ICMR testbench
+* tb_icmr.sp -- ICMR testbench
 *******************************************************
 .option post=2
 .option nomod

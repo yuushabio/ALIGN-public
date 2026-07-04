@@ -1,5 +1,5 @@
 *******************************************************
-* tb_psrr_plus_clean.sp -- PSRR+ Simulation
+* tb_psrr_plus.sp -- PSRR+ Simulation
 *******************************************************
 .option post=2 
 .option nomod

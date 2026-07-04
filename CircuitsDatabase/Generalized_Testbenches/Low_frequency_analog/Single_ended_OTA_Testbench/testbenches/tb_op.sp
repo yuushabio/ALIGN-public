@@ -1,5 +1,5 @@
 *******************************************************
-* tb_op_params.sp -- Forced Parameter Extraction
+* tb_op.sp -- .op Parameter Extraction
 *******************************************************
 .option post=2      
 .option nomod

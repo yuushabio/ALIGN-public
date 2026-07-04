@@ -1,5 +1,5 @@
 *******************************************************
-* tb_sr_icmr.sp -- Slew Rate Testbench (Slide Compliant)
+* tb_sr_icmr.sp -- Slew Rate Testbench 
 * Method: Full Range Step (ICMR Min <-> ICMR Max)
 * Measure: 10% to 90% Transition Time
 *******************************************************

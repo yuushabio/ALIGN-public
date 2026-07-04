@@ -1,4 +1,4 @@
-Now check the testbench for Common mode rejection ration: *******************************************************
+*******************************************************
 * tb_cmrr.sp -- CMRR Testbench
 * Measures Differential Gain, Common Mode Gain, and CMRR
 *******************************************************
