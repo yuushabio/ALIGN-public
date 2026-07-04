@@ -13,7 +13,7 @@
 **************** Parameters ***************************
 
 .param VCM     = 0.6         $ Input Common Mode
-.param VOFF    = 1m          $ Offset Voltage (Step 4)
+.param VOFF    = 0          $ Offset Voltage (Step 4)
 
 * Frequency Range
 .param FMIN=10
@@ -58,10 +58,14 @@ CLOAD vout 0 CL
 .ac dec 20 FMIN FMAX
 
 **************** Measurements *************************
+.meas ac PSR_NEG_DIRECT_DB FIND '20*log10(vm(vout)/vm(vss))' AT=FMIN
+.print ac par('vdb(vout)-vdb(vss)')
+
 * Measure Gain from Negative Supply to Output
 .meas ac APS_MINUS_DB  FIND vdb(vout) AT=FMIN
 
 * Calculate PSRR-
-.meas ac PSRR_MINUS_DB PARAM='ADC_GAIN_DB - APS_MINUS_DB'
+.meas ac PSRR_MINUS_DB PARAM='ADC_GAIN_DB - PSR_NEG_DIRECT_DB'
+
 
 .end

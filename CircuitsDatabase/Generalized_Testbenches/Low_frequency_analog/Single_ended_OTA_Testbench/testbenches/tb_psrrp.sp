@@ -12,7 +12,7 @@
 .param VB2_DC = 600m
 **************** Parameters ***************************
 .param VCM     = 0.6         $ Midpoint of ICMR (Step 2)
-.param VOFF    = 1m          $ Offset Voltage (Step 4)
+.param VOFF    = 0          $ Offset Voltage (Step 4)
 
 * FREQUENCY RANGE (Step 5)
 .param FMIN=10
@@ -58,12 +58,14 @@ CLOAD vout 0 CL
 .ac dec 20 FMIN FMAX
 
 **************** Measurements (Steps 6 & 7) ***********
+.meas ac PSR_PLUS_DIRECT_DB FIND '20*log10(vm(vdd)/vm(vout))' AT=FMIN
+.print ac par('vdb(vdd)-vdb(vout)')
 
 * 1. Measure Power Supply Gain (A_ps+) at FMIN (Step 6)
 .meas ac APS_PLUS_DB  FIND vdb(vout) AT=FMIN
 
 * 2. Calculate PSRR+ (Step 7)
 * PSRR+ = DC_Gain - Power_Supply_Gain
-.meas ac PSRR_PLUS_DB PARAM='ADC_GAIN_DB - APS_PLUS_DB'
+.meas ac PSRR_PLUS_DB PARAM='ADC_GAIN_DB - PSR_PLUS_DIRECT_DB'
 
 .end

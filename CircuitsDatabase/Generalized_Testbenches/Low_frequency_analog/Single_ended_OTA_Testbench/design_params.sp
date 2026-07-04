@@ -8,9 +8,9 @@
 
 * --- Biasing ---
 * This is your reference tail current. 
-* Ensure this matches your cm_ota.sp biasing requirements.
+* Ensure this matches your dut.sp biasing requirements.
 .param IBIAS = 5u
-
+.param DUT_HAS_VB2 = 0 $ Change to 1 for LV Cas and Cascode (telescopic) OTAs
 * --- Loading ---
 * Standard load for area/speed trade-offs
 .param CL = 500f
@@ -33,23 +33,21 @@
 .option runlvl=5
 
 *******************************************************
-* Device parameters
+* Device parameters (Update manually)
 *******************************************************
-* Placeholder MOS sizes for the DUT library.
-* Replace these placeholder lengths and widths with the actual sizes for your
-* selected DUT before running the testbenches.
-.param m0_l=180n
-.param m0_w=1u
-.param m1_l=180n
-.param m1_w=1u
-.param m2_l=180n
-.param m2_w=1u
-.param m3_l=180n
-.param m3_w=1u
-.param m4_l=180n
-.param m4_w=1u
-.param m5_l=180n
-.param m5_w=1u
+
+.param m0_w=8e-06
+.param m2_w=8e-06
+.param m0_l=2.4e-07
+.param m2_l=2.4e-07
+.param m1_w=1.05e-05
+.param m3_w=1.05e-05
+.param m1_l=3e-07
+.param m3_l=3e-07
+.param m4_w=1.4e-05
+.param m4_l=3.6e-07
+.param m5_w=1.05e-05
+.param m5_l=3.6e-07
 .param m6_l=180n
 .param m6_w=1u
 .param m7_l=180n
@@ -60,3 +58,4 @@
 .param m9_w=1u
 .param m10_l=180n
 .param m10_w=1u
+
