@@ -50,6 +50,16 @@ endif()
 # SHARED: lpsolve, pybind11
 #
 
+# Reuse previously downloaded FetchContent trees when rebuilding offline.
+set(_align_deps_dir "${CMAKE_BINARY_DIR}/_deps")
+foreach(_dep IN ITEMS boost superlu lpsolve ilpsolverif cbc spdlog json)
+  if(EXISTS "${_align_deps_dir}/${_dep}-src")
+    string(TOUPPER "${_dep}" _dep_upper)
+    set("FETCHCONTENT_SOURCE_DIR_${_dep_upper}" "${_align_deps_dir}/${_dep}-src")
+    message(STATUS "Reusing cached FetchContent source for ${_dep}: ${_align_deps_dir}/${_dep}-src")
+  endif()
+endforeach()
+
 include(FetchContent)
 include(PlaceRouteHierFlow/thirdparty/json.cmake)
 include(PlaceRouteHierFlow/thirdparty/spdlog.cmake)

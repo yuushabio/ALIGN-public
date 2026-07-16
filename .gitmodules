@@ -1,0 +1,6 @@
+[submodule "pdks/ALIGN-pdk-sky130"]
+	path = pdks/ALIGN-pdk-sky130
+	url = https://github.com/yuushabio/ALIGN-pdk-sky130
+[submodule "pdks/ALIGN-pdk-ihpsg13g2"]
+	path = pdks/ALIGN-pdk-ihpsg13g2
+	url = https://github.com/yuushabio/ALIGN-pdk-ihpsg13g2

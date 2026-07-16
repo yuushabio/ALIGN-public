@@ -1,3 +1,6 @@
+set(_align_spdlog_json_formatter "${CMAKE_SOURCE_DIR}/PlaceRouteHierFlow/thirdparty/spdlog_json_formatter.h")
+add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:-include${_align_spdlog_json_formatter}>")
+
 add_subdirectory(PnRDB)
 add_subdirectory(placer)
 add_subdirectory(EA_placer)
@@ -27,6 +30,7 @@ target_link_libraries(
      lpsolve::lpsolve55
      nlohmann_json::nlohmann_json
      spdlog::spdlog
+     fmt::fmt
      superlu
      pybind11::module
      Boost::boost
